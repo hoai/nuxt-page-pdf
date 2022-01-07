@@ -1,11 +1,11 @@
 // Import vue component
-import component from '@/vue-html2pdf.vue';
+import component from '@/nuxtpagepdf.vue';
 
 // install function executed by Vue.use()
 function install(Vue) {
   if (install.installed) return;
   install.installed = true;
-  Vue.component('VueHtml2pdf', component);
+  Vue.component('NuxtPagePdf', component);
 }
 
 // Create module definition for Vue.use()

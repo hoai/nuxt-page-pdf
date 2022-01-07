@@ -65,7 +65,7 @@ if (!argv.format || argv.format === 'es') {
     ...baseConfig,
     external,
     output: {
-      file: 'dist/vue-html2pdf.esm.js',
+      file: 'dist/nuxt-page-pdf.esm.js',
       format: 'esm',
       exports: 'named',
     },
@@ -84,9 +84,9 @@ if (!argv.format || argv.format === 'cjs') {
     external,
     output: {
       compact: true,
-      file: 'dist/vue-html2pdf.ssr.js',
+      file: 'dist/nuxt-page-pdf.ssr.js',
       format: 'cjs',
-      name: 'VueHtml2pdf',
+      name: 'NuxtPagePdf',
       exports: 'named',
       globals,
     },
@@ -111,9 +111,9 @@ if (!argv.format || argv.format === 'iife') {
     external,
     output: {
       compact: true,
-      file: 'dist/vue-html2pdf.min.js',
+      file: 'dist/nuxt-page-pdf.min.js',
       format: 'iife',
-      name: 'VueHtml2pdf',
+      name: 'NuxtPagePdf',
       exports: 'named',
       globals,
     },

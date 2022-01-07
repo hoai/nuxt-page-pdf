@@ -32,7 +32,6 @@
     </div>
 </template>
 <script>
-import html2pdf from 'html2pdf.js'
 
 export default {
 	props: {
@@ -135,7 +134,7 @@ export default {
 			const parentElement = this.$refs.pdfContent.firstChild
 			const pageBreaks = parentElement.getElementsByClassName('html2pdf__page-break')
 			const pageBreakLength = pageBreaks.length - 1
-			
+
 			if (pageBreakLength === -1) return
 
 			this.hasAlreadyParsed = false
@@ -156,7 +155,7 @@ export default {
 			this.progress = 25
 
 			/*
-				When this props is true, 
+				When this props is true,
 				the props paginate-elements-by-height will not be used.
 				Instead the pagination process will rely on the elements with a class "html2pdf__page-break"
 				to know where to page break, which is automatically done by html2pdf.js
@@ -227,6 +226,7 @@ export default {
 		async downloadPdf () {
 			// Set Element and Html2pdf.js Options
 			const pdfContent = this.$refs.pdfContent
+      const html2pdf = (await import('html2pdf.js')).default
 			let options = this.setOptions()
 
 			this.$emit('beforeDownload', { html2pdf, options, pdfContent })
@@ -263,7 +263,7 @@ export default {
 				filename: `${this.filename}.pdf`,
 
 				image: {
-					type: 'jpeg', 
+					type: 'jpeg',
 					quality: 0.98
 				},
 
